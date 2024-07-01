@@ -18,6 +18,7 @@ const loadModel = (sequelize, DataTypes) => {
       Product.belongsToMany(models.Order, { as: 'orders', through: OrderProducts })
     }
   }
+
   Product.init({
     name: DataTypes.STRING,
     description: DataTypes.STRING,
@@ -25,6 +26,8 @@ const loadModel = (sequelize, DataTypes) => {
     image: DataTypes.STRING,
     order: DataTypes.INTEGER,
     availability: DataTypes.BOOLEAN,
+    // Solution
+    visibleUnit: DataTypes.DATE,
     restaurantId: DataTypes.INTEGER,
     productCategoryId: DataTypes.INTEGER
   }, {
