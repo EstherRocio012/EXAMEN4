@@ -28,7 +28,7 @@ module.exports = {
         type: Sequelize.BOOLEAN
       },
       // Solution
-      visibleUnit: {
+      visibleUntil: {
         type: Sequelize.DATE
       },
       restaurantId: {

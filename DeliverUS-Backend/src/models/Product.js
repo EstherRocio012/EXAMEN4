@@ -17,6 +17,18 @@ const loadModel = (sequelize, DataTypes) => {
       Product.belongsTo(models.ProductCategory, { foreignKey: 'productCategoryId', as: 'productCategory' })
       Product.belongsToMany(models.Order, { as: 'orders', through: OrderProducts })
     }
+
+    // Alternative solution
+    isVisible () {
+      const currentDate = new Date()
+      let isVisible = true
+
+      if (this.visibleUntil && this.visibleUntil < currentDate) {
+        isVisible = false
+      }
+
+      return isVisible
+    }
   }
 
   Product.init({
@@ -27,7 +39,7 @@ const loadModel = (sequelize, DataTypes) => {
     order: DataTypes.INTEGER,
     availability: DataTypes.BOOLEAN,
     // Solution
-    visibleUnit: DataTypes.DATE,
+    visibleUntil: DataTypes.DATE,
     restaurantId: DataTypes.INTEGER,
     productCategoryId: DataTypes.INTEGER
   }, {
