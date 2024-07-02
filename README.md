@@ -67,3 +67,16 @@ En ocasiones, los procesos de backend o frontend, con o sin depuración, pueden 
 1. Cuando el profesor te dé el visto bueno, puedes subir el ZIP a la plataforma de Enseñanza Virtual. **Es muy importante esperar a que la plataforma te muestre un enlace al ZIP antes de pulsar el botón de enviar**. Se recomienda descargar ese ZIP para comprobar lo que se ha subido. Un vez realizada la comprobación, puedes enviar el examen.
   
 Si no se siguen estos pasos de manera escrupulosa, cabe la posibilidad de que no se entregue nada o que el ZIP contenga cualquier cosa. 
+
+## Enunciado
+Una vez se ha puesto en marcha la primera versión de DeliverUS, los inversores han solicitado la inclusión de una nueva funcionalidad que consiste en ofrecer a los propietarios la posibilidad de establecer un momento en el que los productos dejarán de ser visibles (visibleUntil).
+
+Un propietario podrá establecer este momento al crear o actualizar un producto con dos escenarios posibles:
+
+Por defecto, este momento será nulo, por lo que se considera que siempre estará visible.
+Si un propietario establece este momento, el producto solo estará visible hasta la fecha (inclusive).
+Además se deben cumplir las siguientes reglas de negocio:
+
+Un propietario no podrá establecer un momento de fin anterior al momento actual.
+Un propierario no podrá establecer un producto como no disponible y, al mismo tiempo, un momento de fin.
+Finalmente, los productos que estén a una semana o menos de desaparecer aparecerán en la interfaz marcados.
